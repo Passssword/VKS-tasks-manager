@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^35.1.2"
+    "electron": "^35.1.2",
+    "sqlite3": "^5.1.7"
   }
 }
