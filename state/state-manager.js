@@ -31,7 +31,9 @@ const reducer = (state = initialState, route) => {
 
 class StateController {
     constructor () {
-        this.initialState = initialState
+        this.initialState = initialState;
+        // const btn = document.querySelector('#VKS-List').addEventListener('clisk', );
+        // const workspace = document.querySelector('.workspace');
     }
     render (route) {
         if (route == this.initialState.activeRoute) { return 0 }
@@ -40,6 +42,7 @@ class StateController {
     checkRole (rolle = 'unregistered') {
         if (rolle == this.initialState.authState.userObject.rolle) {}
     }
+    renderVKS () {}
 }
 
 export default StateController;
