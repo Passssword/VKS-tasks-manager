@@ -27,4 +27,38 @@ height: 100%;
 }
 .profile_info {padding: 5px 0px 10px 0px; border-bottom: 2px solid var(--color1);}
 .menu_wrapper {padding: 5px 0px 10px 0px;border-bottom: 2px solid var(--color1);}
+.munu_caption {margin: 10px 0px 5px 0px;}
+.menu_btn {}
+
+.menuBtn {
+    text-decoration: none;
+    color: var(--color2);
+}
+.menuBtn:hover {color: var(--color4);}
+
+
 .workspace{flex-grow: 1;}
+
+/*------------------------------*/
+/*--------VKSList---------------*/
+/*------------------------------*/
+
+.VKSList_menu_wrapper {
+    /* background: var(--color6); */
+    border-bottom: 2px solid var(--color6);
+    padding: 20px 30px;
+}
+.VKSList_content_wrapper {
+    padding: 20px 30px;
+}
+
+
+
+/*------------------------------*/
+/*--------Settings--------------*/
+/*------------------------------*/
+
+.settins_wrapper {
+    padding: 20px 30px;
+    flex-grow: 1;
+}

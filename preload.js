@@ -1,4 +1,5 @@
 const fs = require('fs')
+const getData = require('./state/dataController.js').getData;
 const { contextBridge } = require('electron')
 
 
@@ -11,16 +12,21 @@ contextBridge.exposeInMainWorld('versions', {
 
 /* ------------------ */
 
-const sidebarPath = './interface/sidebar.html'
-const workspacePath = './interface/workspace.html'
 
-let sidebarPageFile = fs.readFileSync( sidebarPath, { encoding: 'utf-8', flag: 'r'} )
-let workspacePageFile = fs.readFileSync( workspacePath, { encoding: 'utf-8', flag: 'r'} )
+const dataConfig = getData();
+
+let archivePageFile = fs.readFileSync( './interface/archive-vks.html', { encoding: 'utf-8', flag: 'r'} )
+let reportsPageFile = fs.readFileSync( './interface/reports.html', { encoding: 'utf-8', flag: 'r'} )
+
 
 contextBridge.exposeInMainWorld('pages', {
   sidebarPage: () => sidebarPageFile,
-  workspacePage: () => workspacePageFile,
+  archivePage: () => archivePageFile,
+  reportsPage: () => reportsPageFile
+  
   // we can also expose variables, not just functions
 })
-
-// Test ()
+contextBridge.exposeInMainWorld('data', {
+  dataConfig: () => dataConfig,
+  // we can also expose variables, not just functions
+})

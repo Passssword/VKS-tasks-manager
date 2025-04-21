@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+        http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+        />
+        <meta
+        http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+        />
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <title>VKS manager</title>
+    </head>
+    <body id="app">
+
+        <div class="sidebar">
+            <div>
+      
+              <img src="img/gerb_rf.png"> <br />
+      
+              <div class="profile_info">
+                Вы вошли как: <br />
+                User
+              </div>
+      
+              <div class="menu_wrapper">
+                <p class="munu_caption">ВКС События:</p>
+                <a href="vksList.html" class="menuBtn">Список ВКС</a> <br />
+                <button id="VKSList" class="menu_btn">Список ВКС</button> <br />
+                <button id="VKSArchve" class="menu_btn">Архив ВКС</button> <br />
+                <p class="munu_caption">Отчеты ВКС:</p>
+                <button id="VKSReports" class="menu_btn">Отчеты</button> <br />
+                <p class="munu_caption">Настройки:</p>
+                <a href="settings.html" class="menuBtn">Settings</a> <br />
+              </div>
+      
+            </div>
+          </div>
+      
+          <div class="workspace">
+
+            <div class="VKSList_menu_wrapper">
+                VKS List menu items
+                <button id="VKSList_button_1" class="VKSList_menu_btn">buton 1</button>
+                <button class="VKSList_menu_btn">buton 2</button>
+                <button class="VKSList_menu_btn">buton 3</button>
+            </div>
+            <div class="VKSList_content_wrapper">
+                VKS List Content
+                <ul>
+                    <li id="VKSList_li_item">vks 1</li>
+                    <li>vks 2</li>
+                    <li>vks 3</li>
+                </ul>
+            </div>
+
+          </div>
+
+    </body>
+    <script src="../renderer.js"></script>
+    <script src="./scripts/vks-list.js"></script>
+</html>
