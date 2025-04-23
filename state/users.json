@@ -1,0 +1,18 @@
+{"Users": [
+    {
+        "id": 1,
+        "FirstName": "Admin",
+        "Patronymic": "---",
+        "LastName": "---",
+        "role": "Admin",
+        "passpord": "qwerty"
+    },
+    {
+        "id": 2,
+        "FirstName": "Ксения",
+        "Patronymic": "Юрьевна",
+        "LastName": "Плаксиенко",
+        "role": "Admin",
+        "passpord": "12345"
+    }
+]}

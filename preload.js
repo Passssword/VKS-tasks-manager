@@ -1,5 +1,6 @@
 const fs = require('fs')
 const getData = require('./state/dataController.js').getData;
+const getUsers = require('./state/dataController.js').getUsers;
 const { contextBridge } = require('electron')
 
 
@@ -14,6 +15,7 @@ contextBridge.exposeInMainWorld('versions', {
 
 
 const dataConfig = getData();
+const dataUsers = getUsers();
 
 let archivePageFile = fs.readFileSync( './interface/archive-vks.html', { encoding: 'utf-8', flag: 'r'} )
 let reportsPageFile = fs.readFileSync( './interface/reports.html', { encoding: 'utf-8', flag: 'r'} )
