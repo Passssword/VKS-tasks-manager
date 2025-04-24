@@ -40,6 +40,70 @@ height: 100%;
 .workspace{flex-grow: 1;}
 
 /*------------------------------*/
+/*--------Index-Page------------*/
+/*------------------------------*/
+
+.index_page {
+    flex-grow: 1;
+    background: var(--color5);
+}
+
+.login-container {
+    display: flex;
+    border: 1px solid var(--color2);
+    /* background: #ebebeb; */
+    padding: 12px;
+  }
+.gerb_wrapper img {width: 200px;}
+.fields_wrapper {flex-grow: 1;}
+
+  /* Every row inside .login-container is defined with p tags */
+  .login-container p {
+    padding: 12px;
+  }
+  
+  .login-container input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+  }
+  
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+  }
+  
+  /* Text fields' focus effect */
+  .login-container input[type="text"]:focus,
+  .login-container input[type="password"]:focus {
+    border-color: #888;
+  }
+  
+  .login-container input[type="submit"] {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .login-container input[type="submit"]:hover {
+    background: #17c;
+  }
+  
+  /* Buttons' focus effect */
+  .login-container input[type="submit"]:focus {
+    border-color: #05a;
+  }
+
+/*------------------------------*/
 /*--------VKSList---------------*/
 /*------------------------------*/
 
