@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports.getData = function () {
+module.exports.getConfig = function () {
 
     return fs.readFileSync('./state/config.json','utf8', function (err, data) {
         if (err) throw err;

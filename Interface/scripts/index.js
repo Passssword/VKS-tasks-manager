@@ -9,8 +9,8 @@ const nodeField = document.getElementById('node_v');
 const chromeField = document.getElementById('chrome_v');
 const electronField = document.getElementById('electron_v');
 
-btnVKSArchve.onclick = function () { return workspace.innerHTML = pages.archivePage() }
-btnVKSReports.onclick = function () { return workspace.innerHTML = pages.reportsPage() }
+// btnVKSArchve.onclick = function () { return workspace.innerHTML = pages.archivePage() }
+// btnVKSReports.onclick = function () { return workspace.innerHTML = pages.reportsPage() }
 
 SettingsField.innerHTML = data.dataConfig()
 

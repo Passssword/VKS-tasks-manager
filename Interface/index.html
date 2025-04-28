@@ -30,7 +30,7 @@
           <a href="vksList.html" class="menuBtn">Список ВКС</a> <br />
           <a href="#" class="menuBtn">Архив ВКС</a> <br />
           <p class="munu_caption">Отчеты ВКС:</p>
-          <button id="VKSReports" class="menu_btn">Отчеты</button> <br />
+          <!-- <button id="VKSReports" class="menu_btn">Отчеты</button> <br /> -->
           <p class="munu_caption">Настройки:</p>
           <a href="settings.html" class="menuBtn">Settings</a> <br />
           <a href="users.html" class="menuBtn">Users</a> <br />
@@ -48,9 +48,9 @@
           <img src="img/gerb.png"> <br />
         </div>
         <div class="fields_wrapper">
-          <p><input type="text" placeholder="Login"></p>
-          <p><input type="password" placeholder="Password"></p>
-          <p><input type="submit" value="Log in"></p>
+          <p><input id="login" type="text" placeholder="Login"></p>
+          <p><input id="password" type="password" placeholder="Password"></p>
+          <p><input id="btnInterSystem" type="submit" value="Войти в систему"></p>
         </div>
         
       </div>
@@ -60,5 +60,5 @@
 
   </body>
   <script src="../renderer.js"></script>
-  <script src="./scripts/index.js"></script>
+  <script src="./scripts/authefication.js"></script>
 </html>

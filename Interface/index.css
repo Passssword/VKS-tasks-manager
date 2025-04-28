@@ -45,16 +45,19 @@ height: 100%;
 
 .index_page {
     flex-grow: 1;
+    display: flex;
+    align-items: center;
     background: var(--color5);
 }
 
 .login-container {
     display: flex;
-    border: 1px solid var(--color2);
+    width: 550px;
+    /* border: 1px solid var(--color2); */
     /* background: #ebebeb; */
     padding: 12px;
   }
-.gerb_wrapper img {width: 200px;}
+.gerb_wrapper img {width: 180px;}
 .fields_wrapper {flex-grow: 1;}
 
   /* Every row inside .login-container is defined with p tags */
@@ -68,7 +71,7 @@ height: 100%;
     width: 100%;
     border-width: 1px;
     border-style: solid;
-    padding: 16px;
+    padding: 10px 15px;
     outline: 0;
     font-family: inherit;
     font-size: 0.95em;

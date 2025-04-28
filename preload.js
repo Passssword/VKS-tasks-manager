@@ -1,6 +1,7 @@
 const fs = require('fs')
-const getData = require('./state/dataController.js').getData;
+const getConfig = require('./state/dataController.js').getConfig;
 const getUsers = require('./state/dataController.js').getUsers;
+const checkUserData = require('./state/authController.js').checkUserData;
 const { contextBridge } = require('electron')
 
 
@@ -14,7 +15,7 @@ contextBridge.exposeInMainWorld('versions', {
 /* ------------------ */
 
 
-const dataConfig = getData();
+const dataConfig = getConfig();
 const dataUsers = getUsers();
 
 let archivePageFile = fs.readFileSync( './interface/archive-vks.html', { encoding: 'utf-8', flag: 'r'} )
@@ -30,5 +31,7 @@ contextBridge.exposeInMainWorld('pages', {
 })
 contextBridge.exposeInMainWorld('data', {
   dataConfig: () => dataConfig,
+  dataUsers: () => dataUsers,
+  checkUser: (authObj) => checkUserData(authObj)
   // we can also expose variables, not just functions
 })

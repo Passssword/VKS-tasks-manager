@@ -1,6 +1,7 @@
 {"Users": [
     {
         "id": 1,
+        "Nickname": "Admin",
         "FirstName": "Admin",
         "Patronymic": "---",
         "LastName": "---",
@@ -9,6 +10,7 @@
     },
     {
         "id": 2,
+        "Nickname": "Плаксиенко К.Ю.",
         "FirstName": "Ксения",
         "Patronymic": "Юрьевна",
         "LastName": "Плаксиенко",
