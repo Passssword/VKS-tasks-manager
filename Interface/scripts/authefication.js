@@ -8,5 +8,5 @@ const btnInterSystem = document.getElementById('btnInterSystem');
 btnInterSystem.onclick = function () {
     let authData = {login: fieldLogin.value, password: fieldPassword.value}
     // console.log(authData)
-    data.checkUser()
+    data.checkUser(authData)
 }
