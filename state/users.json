@@ -6,7 +6,7 @@
         "Patronymic": "---",
         "LastName": "---",
         "role": "Admin",
-        "passpord": "qwerty"
+        "password": "qwerty"
     },
     {
         "id": 2,
@@ -15,6 +15,6 @@
         "Patronymic": "Юрьевна",
         "LastName": "Плаксиенко",
         "role": "Admin",
-        "passpord": "12345"
+        "password": "12345"
     }
 ]}

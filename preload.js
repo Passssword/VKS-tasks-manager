@@ -1,9 +1,11 @@
 const fs = require('fs')
 const getConfig = require('./state/dataController.js').getConfig;
 const getUsers = require('./state/dataController.js').getUsers;
+const StateController = require('./state/state-manager.js').StateController;
 const checkUserData = require('./state/authController.js').checkUserData;
 const { contextBridge } = require('electron')
 
+const stateManager = new StateController();
 
 contextBridge.exposeInMainWorld('versions', {
   node: () => process.versions.node,
@@ -35,3 +37,9 @@ contextBridge.exposeInMainWorld('data', {
   checkUser: (authObj) => checkUserData(authObj)
   // we can also expose variables, not just functions
 })
+
+
+contextBridge.exposeInMainWorld('stateManager', {
+  authStatus: () => stateManager.authStatus()
+} )
+console.log(stateManager.authStatus())

@@ -4,10 +4,16 @@ const getUsers = require('./dataController.js').getUsers;
 
 const checkUserData = (authObject) => {
     const dataUsers = getUsers();
-    console.log(dataUsers)
-    console.log(authObject)
-    let result = dataUsers.Users.find( (elem) => elem.Nickname == authObject.login )
-    console.log(result)
+    const json = JSON.parse(dataUsers); // String to object
+    // console.log(json)
+    // console.log(authObject)
+    let result = json.Users.find( elem => elem.Nickname == authObject.login && elem.password == authObject.password )
+    // console.log(result)
+    if (result) {
+        console.log(result)
+        window.location.replace("settings.html");
+    }
+    else { console.log("Неверные пользовательские данные") }
 }
 
 module.exports.checkUserData = checkUserData;
