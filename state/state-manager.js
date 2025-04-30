@@ -30,18 +30,8 @@ const reducer = (state = initialState, route) => {
 }
 
 class StateController {
-    state = {
-        activeRoute: '/',
-        authState: {
-            isAuth: false,
-            userObject: {
-                Nickname: null,
-                rolle: 'unregistered',
-            }
-        }
-    }
-    constructor () {
-        // this.state = state;
+    constructor (state) {
+        this.state = state;
         // const btn = document.querySelector('#VKS-List').addEventListener('clisk', );
         // const workspace = document.querySelector('.workspace');
     }
@@ -54,7 +44,31 @@ class StateController {
     }
     renderVKS () {}
     get authStatus () { return this.state.authState.isAuth}
+    set authStatus (status) { this.state.authState.isAuth = status}
 }
 
+const stateManager = new StateController(initialState);
+
+function getAuthStatus () {
+    return stateManager.authStatus
+}
+function setAuthStatus (status) {
+    console.log("проверка setAuthStatus = "+status)
+    // return stateManager.authStatus = status
+}
+
+
+
+
+
+
+
+
+
+
+
 module.exports.AuthState = AuthState;
+module.exports.initialState = initialState;
+module.exports.getAuthStatus = getAuthStatus;
+module.exports.setAuthStatus = setAuthStatus;
 module.exports.StateController = StateController;

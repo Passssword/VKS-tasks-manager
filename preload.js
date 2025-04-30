@@ -1,11 +1,16 @@
 const fs = require('fs')
 const getConfig = require('./state/dataController.js').getConfig;
 const getUsers = require('./state/dataController.js').getUsers;
-const StateController = require('./state/state-manager.js').StateController;
+
+// const initialState = require('./state/state-manager.js').initialState;
+// const StateController = require('./state/state-manager.js').StateController;
+const getAuthStatus = require('./state/state-manager.js').getAuthStatus;
+const setAuthStatus = require('./state/state-manager.js').setAuthStatus;
+
 const checkUserData = require('./state/authController.js').checkUserData;
 const { contextBridge } = require('electron')
 
-const stateManager = new StateController();
+// const stateManager = new StateController(initialState);
 
 contextBridge.exposeInMainWorld('versions', {
   node: () => process.versions.node,
@@ -40,6 +45,12 @@ contextBridge.exposeInMainWorld('data', {
 
 
 contextBridge.exposeInMainWorld('stateManager', {
-  authStatus: () => stateManager.authStatus()
+  authStatus: () => getAuthStatus(),
+  setAuthStatus: (status) => setAuthStatus(status)
 } )
-console.log(stateManager.authStatus())
+
+
+// console.log(setAuthStatus(true))
+
+
+// module.exports.stateManager = stateManager;

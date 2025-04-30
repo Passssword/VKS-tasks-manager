@@ -8,5 +8,11 @@ const btnInterSystem = document.getElementById('btnInterSystem');
 btnInterSystem.onclick = function () {
     let authData = {login: fieldLogin.value, password: fieldPassword.value}
     // console.log(authData)
-    data.checkUser(authData)
+    let result = data.checkUser(authData)
+    if (result) {
+        
+        window.location.replace("settings.html");
+        stateManager.setAuthStatus(true);
+    }
+    else { console.log("Неверные пользовательские данные") }
 }
