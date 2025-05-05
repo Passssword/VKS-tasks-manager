@@ -10,9 +10,8 @@ btnInterSystem.onclick = function () {
     // console.log(authData)
     let result = data.checkUser(authData)
     if (result) {
-        
+        stateManager.setAuthStatus(result);
         window.location.replace("settings.html");
-        stateManager.setAuthStatus(true);
     }
     else { console.log("Неверные пользовательские данные") }
 }

@@ -5,7 +5,7 @@
         "FirstName": "Admin",
         "Patronymic": "---",
         "LastName": "---",
-        "role": "Admin",
+        "rolle": "Admin",
         "password": "qwerty"
     },
     {
@@ -14,7 +14,7 @@
         "FirstName": "Ксения",
         "Patronymic": "Юрьевна",
         "LastName": "Плаксиенко",
-        "role": "Admin",
+        "rolle": "Admin",
         "password": "12345"
     }
 ]}

@@ -43,18 +43,26 @@ class StateController {
         if (rolle == this.initialState.authState.userObject.rolle) {}
     }
     renderVKS () {}
-    get authStatus () { return this.state.authState.isAuth}
-    set authStatus (status) { this.state.authState.isAuth = status}
+    get LocalUser () {return JSON.parse(localStorage.User)}
+    set LocalUser (userData) { localStorage.User = JSON.stringify(userData) }
+    get authStatus () { return this.state.authState}
+    set authStatus (userData) {
+        this.state.authState.userObject.Nickname = userData.Nickname;
+        this.state.authState.userObject.rolle = userData.rolle;
+        this.state.authState.isAuth = true;
+    }
 }
 
-const stateManager = new StateController(initialState);
+const stateController = new StateController(initialState);
 
 function getAuthStatus () {
-    return stateManager.authStatus
+    return stateController.LocalUser
 }
-function setAuthStatus (status) {
-    console.log("проверка setAuthStatus = "+status)
-    // return stateManager.authStatus = status
+function setAuthStatus (userData) {
+    console.log("settup AuthStatus")
+    console.log("settup User Data")
+    stateController.authStatus = userData
+    stateController.LocalUser = userData
 }
 
 
