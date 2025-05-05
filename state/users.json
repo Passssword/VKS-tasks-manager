@@ -16,5 +16,14 @@
         "LastName": "Плаксиенко",
         "rolle": "Admin",
         "password": "12345"
+    },
+    {
+        "id": 3,
+        "Nickname": "Степаненко И.Н.",
+        "FirstName": "Илья",
+        "Patronymic": "Николаевич",
+        "LastName": "Степаненко",
+        "rolle": "User",
+        "password": "12345"
     }
 ]}
