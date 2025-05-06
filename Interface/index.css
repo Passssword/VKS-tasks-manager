@@ -24,6 +24,7 @@ height: 100%;
     background: var(--color5);
     padding: 20px 15px;
     color: var(--color2);
+    min-width: 160px;
 }
 .profile_info {padding: 5px 0px 10px 0px; border-bottom: 2px solid var(--color1);}
 .menu_wrapper {padding: 5px 0px 10px 0px;border-bottom: 2px solid var(--color1);}
@@ -37,7 +38,10 @@ height: 100%;
 .menuBtn:hover {color: var(--color4);}
 
 
-.workspace{flex-grow: 1;}
+.workspace{
+  padding: 20px 30px;
+  flex-grow: 1;
+}
 
 /*------------------------------*/
 /*--------Index-Page------------*/
@@ -133,6 +137,16 @@ height: 100%;
 /*------------------------------*/
 /*--------Users-----------------*/
 /*------------------------------*/
+.users_header {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  padding: 20px 20px;
+  background: var(--color5);
+  color: var(--color3);
+}
+.users_buttons {
+  padding: 20px 20px;
+  background: var(--color3);
+}
 table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 14px;
@@ -158,3 +172,14 @@ tr:hover td {
   background: #e8edff;
   color: #6699ff;
 }
+
+
+/*------------------------------*/
+/*--------Buttons---------------*/
+/*------------------------------*/
+
+.btn {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  padding: 5px 10px;
+}
+.create {}
