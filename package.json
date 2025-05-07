@@ -8,7 +8,7 @@
     "start": "electron ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Ilya Stepanenko",
   "license": "ISC",
   "dependencies": {
     "electron": "^35.1.2",

@@ -3,7 +3,9 @@ const getConfig = require('./state/dataController.js').getConfig;
 const getUsers = require('./state/dataController.js').getUsers;
 
 // const initialState = require('./state/state-manager.js').initialState;
-// const StateController = require('./state/state-manager.js').StateController;
+
+const usersController = require('./state/usersController.js').usersController;
+
 const getAuthStatus = require('./state/state-manager.js').getAuthStatus;
 const setAuthStatus = require('./state/state-manager.js').setAuthStatus;
 
@@ -49,6 +51,9 @@ contextBridge.exposeInMainWorld('stateManager', {
   setAuthStatus: (status) => setAuthStatus(status)
 } )
 
+contextBridge.exposeInMainWorld('usersController', {
+  createNewUser: (user) => usersController.CreateNewUser(user)
+} )
 
 // console.log(setAuthStatus(true))
 
