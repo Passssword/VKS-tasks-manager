@@ -45,12 +45,12 @@ class StateController {
     renderVKS () {}
     get LocalUser () {return JSON.parse(localStorage.User)}
     set LocalUser (userData) { localStorage.User = JSON.stringify(userData) }
-    get authStatus () { return this.state.authState}
-    set authStatus (userData) {
-        this.state.authState.userObject.Nickname = userData.Nickname;
-        this.state.authState.userObject.rolle = userData.rolle;
-        this.state.authState.isAuth = true;
-    }
+    // get authStatus () { return this.state.authState}
+    // set authStatus (userData) {
+    //     this.state.authState.userObject.Nickname = userData.Nickname;
+    //     this.state.authState.userObject.rolle = userData.rolle;
+    //     this.state.authState.isAuth = true;
+    // }
 }
 
 const stateController = new StateController(initialState);
@@ -59,9 +59,6 @@ function getAuthStatus () {
     return stateController.LocalUser
 }
 function setAuthStatus (userData) {
-    console.log("settup AuthStatus")
-    console.log("settup User Data")
-    stateController.authStatus = userData
     stateController.LocalUser = userData
 }
 

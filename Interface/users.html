@@ -39,20 +39,44 @@
 
     <div class="workspace">
       
-      <div class="modal_wrapper">
+      <div id="modalCreateUser" class="modal_wrapper">
         <div class="modal_CreateUser_wrapper">
           <div class="modal_CreateUser_header">Создание нового пользователя:</div>
           <div class="modal_CreateUser_content">
-            <p>ID: --</p>
-            <p>Логин: --</p>
-            <p>Пароль: --</p>
-            <p>Права доступа: --</p>
-            <p>Имя: --</p>
-            <p>Отчество: --</p>
-            <p>Фамилия: --</p>
+
+            <table class="table_CreateUser">
+              <tr>
+                <td>ID:</td>
+                <td>--</td>
+              </tr>
+              <tr><td>Логин:</td><td><input id="CreateUser_Login" type="text" placeholder="Login"></td></tr>
+              <tr><td>Пароль:</td><td><input id="CreateUser_Password" type="text" placeholder="Password"></td></tr>
+              <tr>
+                <td>Права доступа:</td>
+                <td> <select id="CreateUser_Rolle" class="select">
+                  <option value="User" selected>Пользователь системы</option>
+                  <option value="Admin">Администратор системы</option>
+                </select></td>
+              </tr>
+              <tr>
+                <td>Имя:</td>
+                <td><input id="CreateUser_Name" type="text" placeholder="Имя"></td>
+              </tr>
+              <tr>
+                <td>Отчество:</td>
+                <td><input id="CreateUser_Patronymic" type="text" placeholder="Отчество"></td>
+              </tr>
+              <tr>
+                <td>Фамилия:</td>
+                <td><input id="CreateUser_LastName" type="text" placeholder="Фамилия"></td>
+              </tr>
+            </table>
+
+            
           </div>
           <div class="modal_CreateUser_footer">
-            <button class="btn close">X  Закрыть</button>
+            <button id="btn_CreateUser_create" class="btn close">Создать пользователя</button>
+            <button id="btn_CreateUser_close" class="btn close">X  Закрыть</button>
           </div>
         </div>
       </div>
@@ -61,7 +85,7 @@
         <h2>Пользователи системы:</h2>
       </div>
       <div class="users_buttons">
-        <button class="btn create">+ Создать пользователя</button>
+        <button id="btn_CreateUser_open" class="btn create">+ Создать пользователя</button>
       </div>
 
       <table id="manegeUsers"></table>

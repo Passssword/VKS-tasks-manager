@@ -3,7 +3,7 @@ const db = new sqlite3.Database('users.db')
 
 
 db.serialize( () => {
-    const sessions = `
+    const usersDatabase = `
         CREATE TABLE IF NOT EXISTS users(
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           nickname TEXT NOT NULL,
@@ -14,20 +14,51 @@ db.serialize( () => {
           lastName TEXT
           )
     `
-    db.run(sessions)
+    db.run(usersDatabase)
 } )
 
 class usersController {
+    static GetAllUsers () { return new Promise( (resolve, reject)=>{
+        db.all('SELECT * FROM users', (error, result)=>{
+            if (error) {
+                reject(error);
+              } else {
+                resolve(result);
+              }
+            })
+        } )
+    }
+
     static CreateNewUser (userData) {
         console.log(userData)
+        const UserArray = [
+            userData.login,
+            userData.password,
+            userData.rolle,
+            userData.Name,
+            userData.Patronymic,
+            userData.LastName
+        ]
+        console.log(UserArray)
+
         const sql = `INSERT INTO users(nickname, password, rolle, firstName, patronymic, lastName) VALUES( ?, ?, ?, ?, ?, ? )`
+
+        return new Promise( (resolve, reject) => {
+            db.run(sql, UserArray, (err) => {
+            if (err) {
+                console.log(err)
+                reject(err)
+            }
+            else {
+                console.log("Создан новый пользователь")
+                resolve()}
+            })  
+        })
+
     }
 
 
 
-    static GenerateSessionKey () {
-        return crypto.randomBytes(32).toString("hex")
-    }
     static GetSessions () { return new Promise( (resolve, reject)=>{
         db.all('SELECT * FROM sessions', (error, result)=>{
             if (error) {

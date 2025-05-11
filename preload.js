@@ -52,7 +52,8 @@ contextBridge.exposeInMainWorld('stateManager', {
 } )
 
 contextBridge.exposeInMainWorld('usersController', {
-  createNewUser: (user) => usersController.CreateNewUser(user)
+  createNewUser: (user) => usersController.CreateNewUser(user),
+  GetAllUsers: () => usersController.GetAllUsers()
 } )
 
 // console.log(setAuthStatus(true))
