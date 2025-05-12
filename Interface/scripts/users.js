@@ -11,23 +11,18 @@ const inputCreateUserName = document.getElementById('CreateUser_Name');
 const inputCreateUserPatronymic = document.getElementById('CreateUser_Patronymic');
 const inputCreateUserLastName = document.getElementById('CreateUser_LastName');
 
-let dataUsers = data.dataUsers()
-let objectUsers = JSON.parse(dataUsers)
+// let dataUsers = data.dataUsers()
+// let objectUsers = JSON.parse(dataUsers)
 
-async function GetUsers () {
-        let usersFromDatabase = await usersController.GetAllUsers()
-        return usersFromDatabase;
+const mapUsersFunc = (users) => {
+        return users.map(elem => `
+                <tr>
+                        <td>${elem.lastName} ${elem.firstName} ${elem.patronymic}</td>
+                        <td>${elem.nickname}</td>
+                        <td>${elem.password}</td>
+                        <td>${elem.rolle}</td>
+                </tr>`)
 }
-console.log( GetUsers() )
-
-let mapUsers = objectUsers.Users.map( elem => `
-        <tr>
-                <td>${elem.LastName} ${elem.FirstName} ${elem.Patronymic}</td>
-                <td>${elem.Nickname}</td>
-                <td>${elem.password}</td>
-                <td>${elem.rolle}</td>
-        </tr>`)
-
 const createUsersString = function (usersArray) {
         let users = "";
         usersArray.forEach(element => {
@@ -36,12 +31,16 @@ const createUsersString = function (usersArray) {
         return users;
 }
 
-let usersTableCaptions = `<tr><th>Ф.И.О.</th><th>Nickname</th><th>Password</th><th>Rolle</th></tr>`
-let usersString = createUsersString(mapUsers)
+usersController.GetAllUsers().then( usersArr => {
 
-let usersTable = usersTableCaptions + usersString;
+        let usersTableCaptions = `<tr><th>Ф.И.О.</th><th>Nickname</th><th>Password</th><th>Rolle</th></tr>`
+        let usersString = createUsersString(mapUsersFunc(usersArr))
+        
+        let usersTable = usersTableCaptions + usersString;
 
-manageUsers.innerHTML = usersTable;
+        //Render Users table
+        manageUsers.innerHTML = usersTable;
+})
 
 
 // Create New User
