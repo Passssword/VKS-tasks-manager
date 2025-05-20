@@ -21,6 +21,10 @@ const mapUsersFunc = (users) => {
                         <td>${elem.nickname}</td>
                         <td>${elem.password}</td>
                         <td>${elem.rolle}</td>
+                        <td>
+                                <button class="btn edit">Редактировать</button>
+                                <button class="btn delete">Удалить</button>
+                        </td>
                 </tr>`)
 }
 const createUsersString = function (usersArray) {
@@ -33,13 +37,20 @@ const createUsersString = function (usersArray) {
 
 usersController.GetAllUsers().then( usersArr => {
 
-        let usersTableCaptions = `<tr><th>Ф.И.О.</th><th>Nickname</th><th>Password</th><th>Rolle</th></tr>`
+        let usersTableCaptions = `<tr>
+                                        <th>Ф.И.О.</th>
+                                        <th>Nickname</th>
+                                        <th>Password</th>
+                                        <th>Rolle</th>
+                                        <th>Действие с объектом</th>
+                                </tr>`
         let usersString = createUsersString(mapUsersFunc(usersArr))
         
         let usersTable = usersTableCaptions + usersString;
 
         //Render Users table
         manageUsers.innerHTML = usersTable;
+        addEventsButtons(usersArr)
 })
 
 
@@ -59,4 +70,14 @@ btnCreateUserCreate.onclick = function () {
                 LastName: inputCreateUserLastName.value
         }
         usersController.createNewUser(newUserObject)
+}
+function addEventsButtons (users) {
+        const buttonEdit = document.querySelectorAll('.edit')
+        
+        let usersCount = 0;
+        buttonEdit.forEach( element => {
+                const id_user = `ID User: ${users[usersCount].id}`
+                usersCount++
+                element.addEventListener('click', (elem) => {console.log(id_user)})
+        })
 }
