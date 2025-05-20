@@ -49,7 +49,8 @@ usersController.GetAllUsers().then( usersArr => {
 
 function addEventsButtons (users) {
         const buttonEdit = document.querySelectorAll('.edit')
-        
+        const buttonDelete = document.querySelectorAll('.delete')
+
         let usersCount = 0;
         buttonEdit.forEach( element => {
                 const user = users[usersCount]
@@ -57,6 +58,19 @@ function addEventsButtons (users) {
                 element.addEventListener('click', (elem) => {
                         stateManager.setUserEditPageData(user)
                         window.location.replace("edit-user.html");
+                })
+        })
+
+        let buttonDeleteUserCount = 0;
+        buttonDelete.forEach( element => {
+                const user = users[buttonDeleteUserCount]
+                buttonDeleteUserCount++
+                element.addEventListener('click', (elem) => {
+                        usersController.DeleteUser(user.id)
+                                .then( res => {
+                                        window.location.replace("users.html");
+                                })
+                        
                 })
         })
 }

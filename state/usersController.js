@@ -57,18 +57,24 @@ class usersController {
 
     }
 
+    static DeleteUser (id) {
+        const sql = `DELETE FROM users WHERE id=${id}`
+        return new Promise( (resolve, reject) => {
+            db.run(sql, (err) => {
+                if (err) {
+                    console.log(err)
+                    reject(err)
+                }
+                else {
+                    console.log("Пользователь удален")
+                    resolve()}
+                })  
+        })  
+      }
+
+    //----------------
 
 
-    static GetSessions () { return new Promise( (resolve, reject)=>{
-        db.all('SELECT * FROM sessions', (error, result)=>{
-            if (error) {
-                reject(error);
-              } else {
-                resolve(result);
-              }
-            })
-        } )
-    }
     static GetKey (key) { return new Promise( (resolve, reject)=>{
         const sql = `SELECT * FROM sessions WHERE session_key=?`
         db.get(sql, [key], (error, result)=>{
