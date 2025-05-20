@@ -76,8 +76,12 @@ function addEventsButtons (users) {
         
         let usersCount = 0;
         buttonEdit.forEach( element => {
-                const id_user = `ID User: ${users[usersCount].id}`
+                const user = users[usersCount]
                 usersCount++
-                element.addEventListener('click', (elem) => {console.log(id_user)})
+                element.addEventListener('click', (elem) => {
+                        stateManager.setUserEditPageData(user)
+                })
         })
 }
+
+// localStorage.User = JSON.stringify(userData)

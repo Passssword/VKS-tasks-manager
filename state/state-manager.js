@@ -51,6 +51,10 @@ class StateController {
     //     this.state.authState.userObject.rolle = userData.rolle;
     //     this.state.authState.isAuth = true;
     // }
+    get UserEditPageData () {return JSON.parse(localStorage.UserEditPageData)}
+    set UserEditPageData (userData) { 
+        // localStorage.removeItem('UserEditPageData')
+        localStorage.UserEditPageData = JSON.stringify(userData) }
 }
 
 const stateController = new StateController(initialState);
@@ -58,10 +62,9 @@ const stateController = new StateController(initialState);
 function getAuthStatus () {
     return stateController.LocalUser
 }
-function setAuthStatus (userData) {
-    stateController.LocalUser = userData
-}
-
+function setAuthStatus (userData) { stateController.LocalUser = userData }
+function getEditPage () {return stateController.UserEditPageData}
+function setEditPage (userData) { stateController.UserEditPageData = userData}
 
 
 
@@ -76,4 +79,6 @@ module.exports.AuthState = AuthState;
 module.exports.initialState = initialState;
 module.exports.getAuthStatus = getAuthStatus;
 module.exports.setAuthStatus = setAuthStatus;
+module.exports.getEditPage = getEditPage;
+module.exports.setEditPage = setEditPage;
 module.exports.StateController = StateController;

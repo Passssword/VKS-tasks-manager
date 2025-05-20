@@ -42,37 +42,36 @@
     <div class="workspace">
 
       <div class="users_header">
-        <h2>Edit User:</h2>
+        <h2>Редактирование данных пользователя:</h2>
       </div>
       <div class="editUser_name_block">
-        Фамилия Имя Отчество
       </div>
 
       <table id="edit_User">
         <tr>
           <td>ID:</td>
-          <td>--</td>
+          <td id="EditUser_id">--</td>
         </tr>
-        <tr><td>Логин:</td><td><input id="CreateUser_Login" type="text" placeholder="Login"></td></tr>
-        <tr><td>Пароль:</td><td><input id="CreateUser_Password" type="text" placeholder="Password"></td></tr>
+        <tr><td>Логин:</td><td><input id="EditUser_Login" type="text" placeholder="Login"></td></tr>
+        <tr><td>Пароль:</td><td><input id="EditUser_Password" type="text" placeholder="Password"></td></tr>
         <tr>
           <td>Права доступа:</td>
-          <td> <select id="CreateUser_Rolle" class="select">
+          <td> <select id="EditUser_Rolle" class="select">
             <option value="User" selected>Пользователь системы</option>
             <option value="Admin">Администратор системы</option>
           </select></td>
         </tr>
         <tr>
           <td>Имя:</td>
-          <td><input id="CreateUser_Name" type="text" placeholder="Имя"></td>
+          <td><input id="EditUser_Name" type="text" placeholder="Имя"></td>
         </tr>
         <tr>
           <td>Отчество:</td>
-          <td><input id="CreateUser_Patronymic" type="text" placeholder="Отчество"></td>
+          <td><input id="EditUser_Patronymic" type="text" placeholder="Отчество"></td>
         </tr>
         <tr>
           <td>Фамилия:</td>
-          <td><input id="CreateUser_LastName" type="text" placeholder="Фамилия"></td>
+          <td><input id="EditUser_LastName" type="text" placeholder="Фамилия"></td>
         </tr>
       </table>
       
@@ -83,5 +82,5 @@
   </body>
   <script src="../renderer.js"></script>
   <script src="./scripts/sidebar.js"></script>
-  <script src="./scripts/users.js"></script>
+  <script src="./scripts/editUserPage.js"></script>
 </html>
