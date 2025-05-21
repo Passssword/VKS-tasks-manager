@@ -72,44 +72,30 @@ class usersController {
         })  
       }
 
-    //----------------
+      static UpdateUser (userData) {
+        const sql = `
+                    UPDATE users SET 
+                    nickname=?,
+                    password=?,
+                    rolle=?,
+                    firstName=?,
+                    patronymic=?,
+                    lastName=?
+                    WHERE id = ?;`
+        const userDataArray = [
+            userData.nickname,
+            userData.password,
+            userData.rolle,
+            userData.firstName,
+            userData.patronymic,
+            userData.lastName,
+            userData.id]
 
-
-    static GetKey (key) { return new Promise( (resolve, reject)=>{
-        const sql = `SELECT * FROM sessions WHERE session_key=?`
-        db.get(sql, [key], (error, result)=>{
-            if (error) {
-                reject(error);
-              } else {
-                resolve(result);
-              } }
-          )
-        })
-    }
-
-    static SaveSession (sessionObj) {
-        
-        const sql = `INSERT INTO sessions(session_key, user_id, expiresDate) VALUES( ?, ?, ? )`
-        return new Promise( (resolve, reject) => {
-            db.run(sql, sessionObj, (err) => {
-            if (err) {
-                console.log(err)
-                reject(err)
-            }
-            else {
-                console.log("Совпадений не найденно, создана новая сессия")
-                resolve(sessionObj)}
-            })  
-        })
-    }
-    static updateSession (sessionKey, userID) {
         return new Promise( (resolve, reject)=>{
-            const sql = `UPDATE sessions SET user_id = ? WHERE session_key = ?;`
-            db.run(sql, [userID, sessionKey], (error) => {
-                if (error) { reject(error) } else {
-                    console.log("updateSession ------>")
-                    console.log("sessionKey: "+sessionKey)
-                    console.log("userID: "+userID)
+            db.run(sql, userDataArray, (error) => {
+                if (error) {reject(error) }
+                else {
+                    console.log("updateUser ------>")
                     return resolve("OK")
                 }
               }) })

@@ -1,7 +1,5 @@
 const manageUsers = document.getElementById('manegeUsers');
-const btnCreateUserClose = document.getElementById('btn_CreateUser_close');
 const btnCreateUserOpen = document.getElementById('btn_CreateUser_open');
-const modalCreateUser = document.getElementById('modalCreateUser');
 
 // let dataUsers = data.dataUsers()
 // let objectUsers = JSON.parse(dataUsers)

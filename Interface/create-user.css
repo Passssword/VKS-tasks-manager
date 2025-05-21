@@ -1,6 +1,4 @@
-.createUser_buttons_block {
-    width: 80%;
-}
+
 #create_User {
     width: 80%;
     min-width: 400px;
@@ -26,3 +24,8 @@
     background: var(--color6);
     color: var(--color3);
   }
+.createUser_buttons_block {
+    width: 80%;
+    min-width: 400px;
+    max-width: 600px;
+}

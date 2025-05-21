@@ -6,7 +6,23 @@ const inputEditUserName = document.getElementById('EditUser_Name');
 const inputEditUserPatronymic = document.getElementById('EditUser_Patronymic');
 const inputEditUserLastName = document.getElementById('EditUser_LastName');
 const editUserNameBlock = document.querySelector('.editUser_name_block');
+const btnEditUser = document.getElementById('editUser_button');
 
+btnEditUser.onclick = function () {
+    let UserObject = {
+        id: inputEditUserID.innerHTML,
+        nickname: inputEditUserLogin.value,
+        password: inputEditUserPassword.value,
+        rolle: inputEditUserRolle.value,
+        firstName: inputEditUserName.value,
+        patronymic: inputEditUserPatronymic.value,
+        lastName: inputEditUserLastName.value
+    }
+
+    usersController.UpdateUser(UserObject).then (res => {
+        window.location.replace("users.html");
+    })
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Document is loaded
