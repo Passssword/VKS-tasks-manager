@@ -64,11 +64,13 @@ function addEventsButtons (users) {
                 const user = users[buttonDeleteUserCount]
                 buttonDeleteUserCount++
                 element.addEventListener('click', (elem) => {
-                        usersController.DeleteUser(user.id)
-                                .then( res => {
-                                        window.location.replace("users.html");
-                                })
-                        
+                        const result = confirm("Хотите удалить пользователя?")
+                        if(result == true) {
+                                usersController.DeleteUser(user.id)
+                                        .then( res => {
+                                                window.location.replace("users.html");
+                                        })
+                        }
                 })
         })
 }
