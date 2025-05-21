@@ -7,13 +7,17 @@ const input_Description = document.getElementById('CreateVKS_Description');
 const btn_Create = document.getElementById('btn_CreateVKS_create');
 
 btn_Create.onclick = function () {
+    let authData = stateManager.authStatus()
+    
     let iventObject = {
-        iventDate: "",
-        iventObject: "",
-        iventType: "",
-        iventJudge: "",
-        iventHall: "",
-        iventDescription: ""
+        iventDate: input_Date.value,
+        iventObject: input_Object.value,
+        iventType: input_Type.value,
+        iventJudge: input_Judge.value,
+        iventHall: input_Hall.value,
+        iventDescription: input_Description.value,
+        iventWorker: `${authData.LastName} ${authData.FirstName} ${authData.Patronymic}`,
+        registrationDate: ""
     }
     console.log(iventObject)
 }
