@@ -5,6 +5,7 @@ const getUsers = require('./state/dataController.js').getUsers;
 // const initialState = require('./state/state-manager.js').initialState;
 
 const usersController = require('./state/usersController.js').usersController;
+const iventsController = require('./state/iventsController.js').iventsController;
 
 const getAuthStatus = require('./state/state-manager.js').getAuthStatus;
 const setAuthStatus = require('./state/state-manager.js').setAuthStatus;
@@ -60,6 +61,11 @@ contextBridge.exposeInMainWorld('usersController', {
   GetAllUsers: async () => await usersController.GetAllUsers(),
   DeleteUser: (id) => usersController.DeleteUser(id),
   UpdateUser: (userData) => usersController.UpdateUser(userData)
+} )
+
+contextBridge.exposeInMainWorld('iventsController', {
+  GetAllIvenst: async () => await iventsController.GetAllIvenst(),
+  CreateNewIvent: (ivent) => iventsController.CreateNewIvent(ivent)
 } )
 
 // console.log(setAuthStatus(true))
