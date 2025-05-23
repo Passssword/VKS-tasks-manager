@@ -64,7 +64,7 @@ contextBridge.exposeInMainWorld('usersController', {
 } )
 
 contextBridge.exposeInMainWorld('iventsController', {
-  GetAllIvenst: async () => await iventsController.GetAllIvenst(),
+  GetAllIvents: async () => await iventsController.GetAllIvents(),
   CreateNewIvent: (ivent) => iventsController.CreateNewIvent(ivent)
 } )
 

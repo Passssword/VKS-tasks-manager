@@ -11,6 +11,7 @@
         content="default-src 'self'; script-src 'self'"
         />
         <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="vksList.css">
         <title>VKS manager</title>
     </head>
     <body id="app">
@@ -40,18 +41,46 @@
       
           <div class="workspace">
 
-            <div class="VKSList_menu_wrapper">
-                VKS List menu items
-                <br>
-                <button id="VKSList_btnCreateVKS" class="VKSList_menu_btn">Create VKS ivent</button>
+            <div class="VKSList_header">
+              <h2>События ВКС:</h2>
             </div>
+            <div class="VKSList_filters">
+              <button id="VKSList_btnCreateVKS" class="VKSList_menu_btn">+ Создать новое событие ВКС</button>
+            </div>
+
             <div class="VKSList_content_wrapper">
-                VKS List Content
-                <ul>
-                    <li id="VKSList_li_item">vks 1</li>
-                    <li>vks 2</li>
-                    <li>vks 3</li>
-                </ul>
+              
+              <a class="VKSList_link_wrapper" href="#">
+              <div class="VKSList_event_wrapper">
+
+                <div class="VKSList_event_caption">
+                  <p>Date / Time</p>
+                  <p>Organization</p>
+                  <p>Вх. / Исх.</p>
+                </div>
+
+                <div class="event_information">
+                  <div class="info_captions">
+                    <div>Судья:</div>
+                    <div>№ Зала:</div>
+                    <div>Дата события:</div>
+                    <div>Зарегистрировал: </div>
+                  </div>
+                  <div class="info_content">
+                    <div>Ф.И.О. Судьи</div>
+                    <div>№ Зала</div>
+                    <div>--.--.----   --:--</div>
+                    <div>Ф.И.О.  Сотрудника</div>
+                  </div>
+                </div>
+                
+                <div class="event_comment">
+                  Comment: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+                
+                <div class="event_footer"><p>Дата регистрации события: --.--.---- Время: --:--</p></div>
+              </div></a>
+
             </div>
 
           </div>
