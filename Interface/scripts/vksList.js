@@ -14,7 +14,7 @@ VKSList_btnCreateVKS.onclick = function () {
 
 const reformatDate = (iventsArray) => {
     
-    let reformatIvents = iventsArray.map( elem => {
+    return iventsArray.map( elem => {
         let date = new Date(elem.iventDate)
         return {
             id: elem.id,
@@ -29,7 +29,6 @@ const reformatDate = (iventsArray) => {
         }
     })
 
-    return reformatIvents
 }
 
 const mapIvents = (ivents) => {
