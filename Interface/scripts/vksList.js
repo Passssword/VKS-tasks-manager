@@ -40,7 +40,6 @@ const arrToString = (array) => {
 function addEventsButtons (ivents) {
     const VKSList_link = document.querySelectorAll('.VKSList_link_wrapper');
     
-    let openEventLinkCount = 0
     VKSList_link.forEach( element => {
         element.addEventListener('click', (e) => {modalWindow.style.display = 'flex';})
         element.addEventListener('mouseover', (elem) => {

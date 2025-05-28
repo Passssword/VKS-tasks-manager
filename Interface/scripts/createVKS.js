@@ -24,7 +24,9 @@ btn_Create.onclick = function () {
     console.log(dateFormat)
     console.log(iventObject)
 
-    iventsController.CreateNewIvent(iventObject).then( res => {console.log(res)})
+    iventsController.CreateNewIvent(iventObject).then( res => {
+        window.location.replace("vksList.html");
+    })
 }
 
 const formatDate = (date) => {

@@ -26,6 +26,7 @@ class iventsController {
             if (error) {
                 reject(error);
               } else {
+                result.sort(sortArray)
                 resolve(result);
               }
             })
@@ -72,3 +73,13 @@ class iventsController {
 
 module.exports = db;
 module.exports.iventsController = iventsController;
+
+function sortArray (a, b) {
+    if (a.iventDate > b.iventDate) return 1;
+    if (a.iventDate == b.iventDate) return 0;
+    if (a.iventDate < b.iventDate) return -1;
+}
+
+function formatDate (arr) {
+    return arr;
+}
