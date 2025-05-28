@@ -12,6 +12,26 @@ VKSList_btnCreateVKS.onclick = function () {
     window.location.replace("create-vks.html");
 }
 
+const reformatDate = (iventsArray) => {
+    
+    let reformatIvents = iventsArray.map( elem => {
+        let date = new Date(elem.iventDate)
+        return {
+            id: elem.id,
+            iventDate: date,
+            iventObject: elem.iventObject,
+            iventType: elem.iventType,
+            iventJudge: elem.iventJudge,
+            iventHall: elem.iventHall,
+            iventDescription: elem.iventDescription,
+            iventWorker: elem.iventWorker,
+            registrationDate: elem.registrationDate,
+        }
+    })
+
+    return reformatIvents
+}
+
 const mapIvents = (ivents) => {
 
     return ivents.map(ivent => `
@@ -19,7 +39,7 @@ const mapIvents = (ivents) => {
             <div class="VKSList_event_wrapper">
 
             <div class="VKSList_event_caption">
-                <p>${ivent.iventDate}</p>
+                <p>${ivent.iventDate.toLocaleDateString()} - ${ivent.iventDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</p>
                 <p>${ivent.iventObject}</p>
                 <p>${ivent.iventType}</p>
             </div>
@@ -56,7 +76,8 @@ function addEventsButtons (ivents) {
 iventsController.GetAllIvents().then( ivents => {
     console.log(ivents)
 
-    let iventsMap = mapIvents(ivents)
+    let reformatIventsArray = reformatDate(ivents)
+    let iventsMap = mapIvents(reformatIventsArray)
     let iventsHTML = arrToString(iventsMap)
 
     VKSList_ivent_wrapper.innerHTML = iventsHTML
