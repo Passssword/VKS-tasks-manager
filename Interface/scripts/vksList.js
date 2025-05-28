@@ -43,6 +43,14 @@ function addEventsButtons (ivents) {
     let openEventLinkCount = 0
     VKSList_link.forEach( element => {
         element.addEventListener('click', (e) => {modalWindow.style.display = 'flex';})
+        element.addEventListener('mouseover', (elem) => {
+            let target = elem.target;
+            target.parentNode.style.background = "var(--color7)"
+        })
+        element.addEventListener('mouseout', (elem) => {
+            let target = elem.target;
+            target.parentNode.style.background = ""
+        })
     })
 }
 
