@@ -32,17 +32,7 @@ contextBridge.exposeInMainWorld('versions', {
 const dataConfig = getConfig();
 const dataUsers = getUsers();
 
-let archivePageFile = fs.readFileSync( './interface/archive-vks.html', { encoding: 'utf-8', flag: 'r'} )
-let reportsPageFile = fs.readFileSync( './interface/reports.html', { encoding: 'utf-8', flag: 'r'} )
 
-
-contextBridge.exposeInMainWorld('pages', {
-  sidebarPage: () => sidebarPageFile,
-  archivePage: () => archivePageFile,
-  reportsPage: () => reportsPageFile
-  
-  // we can also expose variables, not just functions
-})
 contextBridge.exposeInMainWorld('data', {
   dataConfig: () => dataConfig,
   dataUsers: () => dataUsers,
