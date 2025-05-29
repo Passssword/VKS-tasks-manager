@@ -122,4 +122,6 @@ const renderModalWindow = (ivent) => {
 }
 
 /* Переход на страницу редактирования события */
-btnModal_Edit.onclick = function () {}
+btnModal_Edit.onclick = function () {
+    window.location.replace("edit-vks.html");
+}

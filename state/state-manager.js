@@ -53,7 +53,7 @@ class StateController {
     // }
     get IventEditPageData () {return JSON.parse(localStorage.IventEditPageData)}
     set IventEditPageData (userData) { 
-        // localStorage.removeItem('UserEditPageData')
+        // localStorage.removeItem('IventEditPageData')
         localStorage.IventEditPageData = JSON.stringify(userData) }
     get UserEditPageData () {return JSON.parse(localStorage.UserEditPageData)}
     set UserEditPageData (userData) { 
