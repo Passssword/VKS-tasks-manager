@@ -11,6 +11,8 @@ const getAuthStatus = require('./state/state-manager.js').getAuthStatus;
 const setAuthStatus = require('./state/state-manager.js').setAuthStatus;
 const getEditPage = require('./state/state-manager.js').getEditPage;
 const setEditPage = require('./state/state-manager.js').setEditPage;
+const getIventEditPage = require('./state/state-manager.js').getIventEditPage;
+const setIventEditPage = require('./state/state-manager.js').setIventEditPage;
 
 const checkUserData = require('./state/authController.js').checkUserData;
 const { contextBridge } = require('electron')
@@ -53,7 +55,9 @@ contextBridge.exposeInMainWorld('stateManager', {
   authStatus: () => getAuthStatus(),
   setAuthStatus: (status) => setAuthStatus(status),
   getEditPageData: () => getEditPage(),
-  setUserEditPageData: (userEditPageData) => {setEditPage(userEditPageData)}
+  setUserEditPageData: (userEditPageData) => {setEditPage(userEditPageData)},
+  getIventEditPage: () => getIventEditPage(),
+  setIventEditPage: (iventData) => {setIventEditPage(iventData)}
 } )
 
 contextBridge.exposeInMainWorld('usersController', {

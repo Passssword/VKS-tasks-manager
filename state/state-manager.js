@@ -51,6 +51,10 @@ class StateController {
     //     this.state.authState.userObject.rolle = userData.rolle;
     //     this.state.authState.isAuth = true;
     // }
+    get IventEditPageData () {return JSON.parse(localStorage.IventEditPageData)}
+    set IventEditPageData (userData) { 
+        // localStorage.removeItem('UserEditPageData')
+        localStorage.IventEditPageData = JSON.stringify(userData) }
     get UserEditPageData () {return JSON.parse(localStorage.UserEditPageData)}
     set UserEditPageData (userData) { 
         // localStorage.removeItem('UserEditPageData')
@@ -65,7 +69,8 @@ function getAuthStatus () {
 function setAuthStatus (userData) { stateController.LocalUser = userData }
 function getEditPage () {return stateController.UserEditPageData}
 function setEditPage (userData) { stateController.UserEditPageData = userData}
-
+function getIventEditPage () {return stateController.IventEditPageData}
+function setIventEditPage (iventData) { stateController.IventEditPageData = iventData}
 
 
 
@@ -81,4 +86,6 @@ module.exports.getAuthStatus = getAuthStatus;
 module.exports.setAuthStatus = setAuthStatus;
 module.exports.getEditPage = getEditPage;
 module.exports.setEditPage = setEditPage;
+module.exports.getIventEditPage = getIventEditPage;
+module.exports.setIventEditPage = setIventEditPage;
 module.exports.StateController = StateController;

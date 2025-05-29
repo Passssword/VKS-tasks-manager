@@ -1,11 +1,9 @@
 
 const VKSList_btnCreateVKS = document.getElementById('VKSList_btnCreateVKS');
 
-const modalWindow = document.querySelector('.modal_wrapper');
-const btnModal_Edit = document.getElementById('btnModal_Edit');
-const btnModal_Close = document.getElementById('btnModal_Close');
 const VKSList_ivent_wrapper = document.getElementById('VKSList_ivent_wrapper');
 
+const modalWindow = document.querySelector('.modal_wrapper');
 const Modal_Caption_Date = document.getElementById('Modal_Caption_Date');
 const Modal_Caption_Organization = document.getElementById('Modal_Caption_Organization');
 const Modal_Caption_Type = document.getElementById('Modal_Caption_Type');
@@ -15,6 +13,8 @@ const Modal_Info_Date = document.getElementById('Modal_Info_Date');
 const Modal_Info_Worker = document.getElementById('Modal_Info_Worker');
 const Modal_Comment = document.getElementById('Modal_Comment');
 const Modal_Footer_DateRegistration = document.getElementById('Modal_Footer_DateRegistration');
+const btnModal_Edit = document.getElementById('btnModal_Edit');
+const btnModal_Close = document.getElementById('btnModal_Close');
 
 VKSList_btnCreateVKS.onclick = function () {
     window.location.replace("create-vks.html");
@@ -70,7 +70,10 @@ function addEventsButtons (ivents) {
     let elementsCount = 0
     VKSList_link.forEach( element => {
         let ivent = ivents[elementsCount]
-        element.addEventListener('click', (e) => { renderModalWindow(ivent) })
+        element.addEventListener('click', (e) => {
+            stateManager.setIventEditPage(ivent)
+            renderModalWindow(ivent)
+        })
         element.addEventListener('mouseover', (elem) => {
             let target = elem.target;
             target.parentNode.style.background = "var(--color7)"
@@ -117,3 +120,6 @@ const renderModalWindow = (ivent) => {
     Modal_Comment.innerHTML = ivent.iventDescription
     Modal_Footer_DateRegistration.innerHTML = ivent.iventRegistrationDate
 }
+
+/* Переход на страницу редактирования события */
+btnModal_Edit.onclick = function () {}
