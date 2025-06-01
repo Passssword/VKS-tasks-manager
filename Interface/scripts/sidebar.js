@@ -7,7 +7,7 @@ let authData = stateManager.authStatus()
 if ( authData ) {
     console.log( "authefication Status: true" )
     console.log( authData )
-    sidebarNickname.innerHTML = authData.Nickname
+    sidebarNickname.innerHTML = authData.nickname
     sidebarMenu.innerHTML = `
         <p class="munu_caption">ВКС События:</p>
         <a href="vksList.html" class="menuBtn">Список ВКС</a> <br />

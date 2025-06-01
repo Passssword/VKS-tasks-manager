@@ -36,7 +36,7 @@ const dataUsers = getUsers();
 contextBridge.exposeInMainWorld('data', {
   dataConfig: () => dataConfig,
   dataUsers: () => dataUsers,
-  checkUser: (authObj) => checkUserData(authObj)
+  checkUser: async (authObj) => await checkUserData(authObj)
   // we can also expose variables, not just functions
 })
 
