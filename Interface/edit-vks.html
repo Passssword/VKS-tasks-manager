@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="edit-user.css">
     <link rel="stylesheet" type="text/css" href="create-user.css">
+    <link rel="stylesheet" type="text/css" href="edit-vks.css">
     <title>VKS manager</title>
   </head>
 
@@ -45,6 +46,46 @@
       </div>
       <div class="editUser_name_block">
       </div>
+
+      <div class="editVKS_table_wrapper">
+
+        <!-- Table -->
+        <table class="EditVKS_table" cellspacing='0'>
+          <tr>
+            <th>Тип ВКС</th>
+            <td>
+              <select id="CreateVKS_Type" class="EditVKS_input">
+                <option id="CreateVKS_TypeOption_Inbox" value="Inbox" selected>Входищий ВКС</option>
+                <option id="CreateVKS_TypeOption_Outbox" value="Outbox">Исходящий ВКС</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th>Дата / Время события</th>
+            <td><input id="CreateVKS_Date" class="EditVKS_input" type="datetime-local"></td>
+          </tr>
+          <tr>
+            <th>Объект ВКС</th>
+            <td><input id="CreateVKS_Object" class="EditVKS_input" type="text" placeholder="Введите участника ВКС"></td>
+          </tr>
+          <tr>
+            <th>Судья</th>
+            <td><input id="CreateVKS_Judge" class="EditVKS_input" type="text" placeholder="Ф.И.О. Судьи"></td>
+          </tr>
+          <tr>
+            <th>№ Зала</th>
+            <td><input id="CreateVKS_Hall" class="EditVKS_input" type="text" placeholder="№ Зала"></td>
+          </tr>
+          <tr>
+            <th>Комментарий</th>
+            <td><textarea id="CreateVKS_Description" class="EditVKS_input" placeholder="Введите описание..."></textarea></td>
+          </tr>
+        </table>
+        <!-- --------------------------------------------- -->
+
+      </div>
+      
+      
 
       <table id="create_User">
         <tr>
