@@ -9,7 +9,9 @@ const btn_Create = document.getElementById('btn_CreateVKS_create');
 btn_Create.onclick = function () {
     let authData = stateManager.authStatus()
     let dateNow = new Date()
-    let dateFormat = formatDate(dateNow)
+    let dateString = dateFormatString(dateNow)
+
+    console.log(authData) 
 
     let iventObject = {
         iventDate: input_Date.value,
@@ -18,10 +20,10 @@ btn_Create.onclick = function () {
         iventJudge: input_Judge.value,
         iventHall: input_Hall.value,
         iventDescription: input_Description.value,
-        iventWorker: `${authData.LastName} ${authData.FirstName} ${authData.Patronymic}`,
+        iventWorker: `${authData.lastName} ${authData.firstName} ${authData.patronymic}`,
         registrationDate: Date.parse(dateNow)
     }
-    console.log(dateFormat)
+    console.log(dateString)
     console.log(iventObject)
 
     iventsController.CreateNewIvent(iventObject).then( res => {
@@ -29,7 +31,7 @@ btn_Create.onclick = function () {
     })
 }
 
-const formatDate = (date) => {
+const dateFormatString = (date) => {
     // let dateObject = {
     //     year: date.getFullYear(),
     //     mount: date.getMonth(),

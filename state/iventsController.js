@@ -54,7 +54,7 @@ class iventsController {
             iventData.iventHall,
             iventData.iventDescription,
             iventData.iventWorker,
-            iventData.iventRegistrationDate,
+            iventData.registrationDate,
         ]
 
         return new Promise( (resolve, reject)=>{
