@@ -20,38 +20,40 @@ VKSList_btnCreateVKS.onclick = function () {
     window.location.replace("create-vks.html");
 }
 
-const reformatDate = (iventsArray) => {
+// const reformatDate = (iventsArray) => {
     
-    return iventsArray.map( elem => {
-        let date = new Date(elem.iventDate)
-        return {
-            id: elem.id,
-            iventDate: date,
-            iventObject: elem.iventObject,
-            iventType: elem.iventType,
-            iventJudge: elem.iventJudge,
-            iventHall: elem.iventHall,
-            iventDescription: elem.iventDescription,
-            iventWorker: elem.iventWorker,
-            registrationDate: elem.registrationDate,
-        }
-    })
+//     return iventsArray.map( elem => {
+//         let date = new Date(elem.iventDate)
+//         return {
+//             id: elem.id,
+//             iventDate: date,
+//             iventObject: elem.iventObject,
+//             iventType: elem.iventType,
+//             iventJudge: elem.iventJudge,
+//             iventHall: elem.iventHall,
+//             iventDescription: elem.iventDescription,
+//             iventWorker: elem.iventWorker,
+//             registrationDate: elem.registrationDate,
+//         }
+//     })
 
-}
+// }
 
 const mapIvents = (ivents) => {
 
-    return ivents.map(ivent => `
+    return ivents.map(ivent => {
+        let date = new Date(ivent.iventDate)
+        return (`
         <a class="VKSList_link_wrapper" href="#">
             <div class="VKSList_event_wrapper">
 
             <div class="VKSList_event_caption">
-                <p>${ivent.iventDate.toLocaleDateString()} - ${ivent.iventDate.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</p>
+                <p>${date.toLocaleDateString()} - ${date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</p>
                 <p>${ivent.iventObject}</p>
                 <p>${ivent.iventType}</p>
             </div>
 
-        </div></a>`
+        </div></a>`)}
     )
 }
 
@@ -90,13 +92,13 @@ function addEventsButtons (ivents) {
 iventsController.GetAllIvents().then( ivents => {
     console.log(ivents)
 
-    let reformatIventsArray = reformatDate(ivents)
-    let iventsMap = mapIvents(reformatIventsArray)
+    // let reformatIventsArray = reformatDate(ivents)
+    let iventsMap = mapIvents(ivents)
     let iventsHTML = arrToString(iventsMap)
 
     VKSList_ivent_wrapper.innerHTML = iventsHTML
-
-    addEventsButtons (reformatIventsArray)
+    
+    addEventsButtons (ivents)
 })
 
 
