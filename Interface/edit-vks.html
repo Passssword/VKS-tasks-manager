@@ -52,6 +52,10 @@
         <!-- Table -->
         <table class="EditVKS_table" cellspacing='0'>
           <tr>
+            <th>ID</th>
+            <td id="EditVKS_id_container">--</td>
+          </tr>
+          <tr>
             <th>Тип ВКС</th>
             <td>
               <select id="CreateVKS_Type" class="EditVKS_input">
@@ -80,6 +84,14 @@
             <th>Комментарий</th>
             <td><textarea id="CreateVKS_Description" class="EditVKS_input" placeholder="Введите описание..."></textarea></td>
           </tr>
+          <tr>
+            <th>Сотрудник создавший запись</th>
+            <td id="EditVKS_createWorker_container">--</td>
+          </tr>
+          <tr>
+            <th>Дата / Время создания события</th>
+            <td id="EditVKS_createDate_container">--</td>
+          </tr>
         </table>
         <!-- --------------------------------------------- -->
 
@@ -87,7 +99,7 @@
       
       
 
-      <table id="create_User">
+      <!-- <table id="create_User">
         <tr>
           <td>Дата и время события:</td>
           <td><input id="CreateVKS_Date" type="datetime-local"></td>
@@ -112,10 +124,11 @@
           <td>Описание:</td>
           <td><textarea id="CreateVKS_Description" placeholder="Введите описание..."></textarea></td>
         </tr>
-      </table>
+      </table> -->
       <div class="createUser_buttons_block">
         <button id="btn_EditIvent" class="btn create">Редактировать событие ВКС</button>
       </div>
+
     </div>
 
     
