@@ -6,28 +6,28 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "build": "electron-packager . --out=build --overwrite",
+    "build": "electron-packager . --platform=win32 --arch=x64 --electron-version=35.1.2 --out=build --overwrite",
     "builder": "electron-builder"
   },
   "keywords": [],
   "author": "Ilya Stepanenko",
   "license": "ISC",
   "dependencies": {
-    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "electron": "^35.1.2",
     "electron-builder": "^26.0.12",
-    "electron-packager": "^17.1.2"
+    "electron-packager": "^17.1.2",
+    "sqlite3": "^5.1.7"
   },
   "build": {
     "appId": "vks-tasks-manager",
     "win": {
-      "icon" : "icon.png",
+      "icon" : "icon.ico",
       "target": "nsis"
     },
     "linux": {
-      "icon" : "build/images/icon.png",
+      "icon" : "icon.ico",
       "target": ["pacman"]
     },
     "nsis": {
